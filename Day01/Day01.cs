@@ -24,8 +24,8 @@ namespace AdventOfCode2021.Day01
         {
             return readings
                 .SkipLast(1)
-                .Select((x, i) => (depth: x, nextDepth: readings[i + 1]))
-                .Count(x => x.nextDepth > x.depth);
+                .Select((x, i) => (reading: x, nextReading: readings[i + 1]))
+                .Count(x => x.nextReading > x.reading);
         }
     }
 }
