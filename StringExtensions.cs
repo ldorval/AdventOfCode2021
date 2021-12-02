@@ -13,8 +13,15 @@ namespace AdventOfCode2021
         
         public static List<int> LinesToInts(this string value)
         {
-            var lines = value.Split("\r\n").ToList();
-            return lines.Select(x => Convert.ToInt32(x)).ToList();
+            return value
+                .Split("\r\n")
+                .Select(x => Convert.ToInt32(x))
+                .ToList();
+        }
+        
+        public static List<string> LinesToString(this string value)
+        {
+            return value.Split("\r\n").ToList();
         }
     }
 }
