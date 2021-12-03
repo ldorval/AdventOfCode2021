@@ -17,7 +17,7 @@ namespace AdventOfCode2021.Day02
             var coordinates = Solve(input);
             return coordinates.x * coordinates.depth;
         }
-
+        
         private static (int x, int depth, int aim) Solve(string input)
         {
             var coordinates = (x: 0, depth: 0, aim: 0);
