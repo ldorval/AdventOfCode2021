@@ -8,6 +8,11 @@ namespace AdventOfCode2021
         {
             return File.ReadAllText(PathFrom(file));
         }
+
+        public static StreamReader ReadStream(this string file)
+        {
+            return new StreamReader(PathFrom(file));
+        }
         
         private static string PathFrom(this string file)
         {

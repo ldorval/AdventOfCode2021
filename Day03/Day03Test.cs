@@ -17,7 +17,7 @@ namespace AdventOfCode2021.Day03
         [Test]
         public void SolvePart1()
         {
-            Console.Write(Day03.SolvePart1(InputReader.ReadAll("Day03.txt")));
+            Console.Write(Day03.SolvePart1("Day03.txt".ReadAll()));
         }
 
         [Test]
@@ -29,7 +29,7 @@ namespace AdventOfCode2021.Day03
         [Test]
         public void SolvePart2()
         {
-            Console.Write(Day03.SolvePart2(InputReader.ReadAll("Day03.txt")));
+            Console.Write(Day03.SolvePart2("Day03.txt".ReadAll()));
         }
     }
 }
