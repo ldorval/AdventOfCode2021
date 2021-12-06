@@ -10,6 +10,16 @@ namespace AdventOfCode2021
         {
             return value.Split(',').ToList();
         }
+
+        public static List<int> ToInts(this string value)
+        {
+            return value.Split(",").Select(int.Parse).ToList();
+        }
+        
+        public static List<long> ToLongs(this string value)
+        {
+            return value.Split(",").Select(long.Parse).ToList();
+        }
         
         public static List<int> LinesToInts(this string value)
         {
