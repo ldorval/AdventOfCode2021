@@ -31,10 +31,10 @@ namespace AdventOfCode2021.Day08
         {
             var map = new Dictionary<string, string>
             {
-                {"1", line.patterns.First(x => x.HasLength(2))},
-                {"4", line.patterns.First(x => x.HasLength(4))},
-                {"7", line.patterns.First(x => x.HasLength(3))},
-                {"8", line.patterns.First(x => x.HasLength(7))}
+                {"1", line.patterns.Single(x => x.HasLength(2))},
+                {"4", line.patterns.Single(x => x.HasLength(4))},
+                {"7", line.patterns.Single(x => x.HasLength(3))},
+                {"8", line.patterns.Single(x => x.HasLength(7))}
             };
 
             map.Add("3", line.patterns.Single(x => x.HasLength(5) && x.HasCommonSidesWith(map["1"], 2)));

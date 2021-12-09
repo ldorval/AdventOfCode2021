@@ -20,6 +20,14 @@ namespace AdventOfCode2021
         {
             return value.Split(",").Select(long.Parse).ToList();
         }
+
+        public static List<List<int>> ToIntMap(this string value)
+        {
+            return value.LinesToString()
+                .Select(x => x.ToCharArray()
+                    .Select(x => Convert.ToInt32(Char.GetNumericValue(x))).ToList())
+                .ToList();
+        }
         
         public static List<int> LinesToInts(this string value)
         {
