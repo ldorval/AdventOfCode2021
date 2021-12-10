@@ -6,7 +6,7 @@ namespace AdventOfCode2021
 {
     public static class StringExtensions
     {
-        public static List<string> ToValueList(this string value)
+        public static List<string> ToStringList(this string value)
         {
             return value.Split(',').ToList();
         }

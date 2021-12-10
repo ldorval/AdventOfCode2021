@@ -17,7 +17,7 @@ namespace AdventOfCode2021.Day09
             var points = input.ToIntMap();
 
             return LowPoints(points)
-                .Select(lowPoint => AdjacentPointsInBasic(points, lowPoint))
+                .Select(lowPoint => AdjacentPointsInBasin(points, lowPoint))
                 .Select(x => x.Distinct())
                 .Select(x => x.Count())
                 .OrderByDescending(x => x)
@@ -25,7 +25,7 @@ namespace AdventOfCode2021.Day09
                 .Aggregate((a, b) => a * b);
         }
 
-        private static List<Point> AdjacentPointsInBasic(List<List<int>> points, Point currentPoint)
+        private static List<Point> AdjacentPointsInBasin(List<List<int>> points, Point currentPoint)
         {
             var pointsInBasin = new List<Point> {currentPoint};
             var validAdjacentPoints = Adjacents(points, currentPoint.X, currentPoint.Y)
@@ -35,7 +35,7 @@ namespace AdventOfCode2021.Day09
             foreach (var adjacent in validAdjacentPoints)
             {
                 pointsInBasin.Add(adjacent);
-                pointsInBasin.AddRange(AdjacentPointsInBasic(points, adjacent));
+                pointsInBasin.AddRange(AdjacentPointsInBasin(points, adjacent));
             }
 
             return pointsInBasin;
