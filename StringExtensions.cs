@@ -6,19 +6,9 @@ namespace AdventOfCode2021
 {
     public static class StringExtensions
     {
-        public static List<string> ToStringList(this string value)
-        {
-            return value.Split(',').ToList();
-        }
-
         public static List<int> ToInts(this string value)
         {
             return value.Split(",").Select(int.Parse).ToList();
-        }
-        
-        public static List<long> ToLongs(this string value)
-        {
-            return value.Split(",").Select(long.Parse).ToList();
         }
 
         public static List<List<int>> ToIntMap(this string value)
@@ -28,7 +18,7 @@ namespace AdventOfCode2021
                     .Select(x => Convert.ToInt32(Char.GetNumericValue(x))).ToList())
                 .ToList();
         }
-        
+
         public static List<int> LinesToInts(this string value)
         {
             return value

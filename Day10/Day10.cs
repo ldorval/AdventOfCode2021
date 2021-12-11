@@ -37,7 +37,7 @@ namespace AdventOfCode2021.Day10
             
             foreach (var c in line)
             {
-                if (IsOpeningSymbol(c))
+                if (Symbols.Keys.Contains(c))
                     openerStack.Push(c);
                 else
                     openerStack.Pop();
@@ -46,20 +46,11 @@ namespace AdventOfCode2021.Day10
             var missingSymbols = string.Empty;
             while (openerStack.Count > 0)
             {
-                missingSymbols += ClosingSymbolOf(openerStack.Pop());
+                char openingSymbol = openerStack.Pop();
+                missingSymbols += Symbols[openingSymbol];
             }
 
             return missingSymbols;
-        }
-
-        private static char ClosingSymbolOf(char openingSymbol)
-        {
-            return Symbols[openingSymbol];
-        }
-
-        private static bool IsOpeningSymbol(char c)
-        {
-            return Symbols.Keys.Contains(c);
         }
 
         private static long CalculateCompletionScore(string missingSymbols)
